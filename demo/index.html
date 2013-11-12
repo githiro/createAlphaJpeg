@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery.createAlphaJpeg-1.0 demo</title>
+<style type="text/css">
+<!--
+* {
+margin: 0;
+padding: 0;
+border: 0;
+}
+html, body {
+height: 100%;
+}
+body {
+background: url(images/bg.gif);
+}
+.wrapper {
+position: relative;
+display: table;
+height: 100%;
+width: 100%;
+}
+.inner {
+display: table-cell;
+text-align: center;
+vertical-align: middle;
+}
+.demoTitle {
+position: absolute;
+top: 10px;
+left: 10px;
+display: inline-block;
+padding: 8px 20px;
+border-radius: 2px;
+background: rgba(255,255,255,0.8);
+color: #333;
+text-shadow: 0 1px 0 #fff;
+}
+.note {
+width: 700px;
+margin: 20px auto 0;
+padding: 4px 10px;
+border-radius: 2px;
+background: rgba(255,255,255,0.8);
+color: #333;
+text-shadow: 0 1px 0 #fff;
+}
+img, canvas {
+display: inline-block;
+margin: 0 30px 0 0;
+}
+-->
+</style>
+<script src="jquery-1.10.2.min.js"></script>
+<script src="../jquery.createAlphaJpeg-1.0.js"></script>
+<script>
+$(function() {
+  $("img").createAlphaJpeg({ afterAllImagesDrawed: function(){
+    $(".inner").append('<p class="note">All image drawed.</p>');
+  } });
+});
+</script>
+</head>
+<body>
+<div class="wrapper">
+  <h1 class="demoTitle">jquery.createAlphaJpeg-1.0 demo</h1>
+  <div class="inner">
+     <img src="images/blank.gif" data-origsrc="images/1.png" data-jpegsrc="images/1.jpg" data-filtersrc="images/alphamask.png" width="200" height="200" alt="">
+     <img src="images/blank.gif" data-origsrc="images/2.png" data-jpegsrc="images/2.jpg" data-filtersrc="images/alphamask.png" width="200" height="200" alt="">
+     <img src="images/blank.gif" data-origsrc="images/3.png" data-jpegsrc="images/3.jpg" data-filtersrc="images/alphamask.png" width="200" height="200" alt="">
+     <img src="images/blank.gif" data-origsrc="images/4.png" data-jpegsrc="images/4.jpg" data-filtersrc="images/alphamask.png" width="200" height="200" alt="">
+  </div>
+</div>
+</body>
+</html>
