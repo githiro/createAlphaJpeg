@@ -1,4 +1,4 @@
-(function($, undefined) {
+;(function($, undefined) {
   $.fn.createAlphaJpeg = function(options) {
     var $this = this,
         $images = $this.find('img').add($this.filter('img')),
